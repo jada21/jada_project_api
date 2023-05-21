@@ -18,7 +18,7 @@ origins = [
     "http://127.0.0.1:8000",
     "http://192.168.100.195:8000",
     "http://63.143.93.108:8000",
-    "http://192.168.100.210:8000",
+    "https://i-likedthisprojectngl.onrender.com",
     "https://simple-smart-hub-client.netlify.app"
 ]
 
@@ -33,6 +33,7 @@ app.add_middleware(                         #instance of middle ware class
 client = motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://jadasdata:Nilaja2002@cluster0.hj6aecx.mongodb.net/?retryWrites=true&w=majority")
 db = client.Project
 pydantic.json.ENCODERS_BY_TYPE[ObjectId]=str  
+
 
 sunset_api_endpoint = "https://api.sunrise-sunset.org/json?lat=18.1096&lng=-77.2975&formatted=0"
 sunset_respo = requests.get(sunset_api_endpoint)
@@ -145,7 +146,6 @@ async def embed_get():
    # return JSONResponse(content=status_object)
     return status_object_json
 
-    
     
 regex = re.compile(r'((?P<hours>\d+?)h)?((?P<minutes>\d+?)m)?((?P<seconds>\d+?)s)?')
 def parse_time(time_str):
