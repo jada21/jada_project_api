@@ -142,11 +142,8 @@ async def embed_get():
         {**data, "_id": str(data["_id"])} for data in status_object
     ]
     status_object_json = json.loads(json.dumps(status_object[0]))
-    #status_object = await db["Embed"].find_one().sort('_id', -1)
-   # return JSONResponse(content=status_object)
     return status_object_json
 
-    
 regex = re.compile(r'((?P<hours>\d+?)h)?((?P<minutes>\d+?)m)?((?P<seconds>\d+?)s)?')
 def parse_time(time_str):
     parts = regex.match(time_str)
